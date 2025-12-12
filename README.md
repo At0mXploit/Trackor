@@ -21,8 +21,8 @@ RESOURCES (read-only data exposed by the server):
 - expense://categories        : Provides the categories.json file (list of categories/subcategories)
 ```
 
-## Remote Deployment
-It is already deployed using FastMCP Cloud, you just need to add this DXT File  `https://at0mxploit.fastmcp.app/manifest.dxt` to Claude Extension. This automatically configures the server for Claude and includes all tools and resources. (Currently available only in Pro). It's setup for all different models and tools but I use Claude so.
+## Remote Deployment (Easiest)
+It is already deployed using FastMCP Cloud, you just need to drag this DXT File  `https://at0mxploit.fastmcp.app/manifest.dxt` to Claude Extension. This automatically configures the server for Claude and includes all tools and resources. (Currently available only in Pro). It's setup for all different models and tools but I use Claude so.
 
 <img width="829" height="366" alt="test" src="https://github.com/user-attachments/assets/bced55ea-eecb-4d9a-bd54-a7c44e498617" />
 
@@ -37,8 +37,13 @@ Install dependencies:
 ```bash
 uv sync
 ```
+Run MCP:
 
-We can run MCP Proxy:
+```bash
+uv run main.py
+```
+
+Run MCP Proxy:
 
 ```bash
 uv run proxy/main.py
@@ -68,3 +73,4 @@ This will generate `trackor-proxy.mcpb`.
 3. Claude will load the MCP server via the local STDIO proxy.
 
 ---
+
