@@ -1,6 +1,6 @@
 # Trackor
 
-This is a custom MCP (Model Context Protocol) server built with **FastMCP**.  
+This is a custom MCP (Model Context Protocol) server and dumb client built with **FastMCP** and Streamlit.  
 It provides tools to track expenses, including adding, listing, summarizing, updating, and exporting data.
 
 The server uses a local SQLite database (`expenses.db`) and a `categories.json` file for expense categories.
@@ -20,13 +20,25 @@ TOOLS (callable actions that perform operations):
 RESOURCES (read-only data exposed by the server):
 - expense://categories        : Provides the categories.json file (list of categories/subcategories)
 ```
+## Dumb MCP Client
 
-## Remote Deployment (Easiest)
+It is Dumb MCP Client meaning without any LLM (I am poor for pro) that uses MCP Server `https://at0mxploit.fastmcp.app/manifest.dxt`.
+### Remote Deployment
+
+It is already deployed in `https://dumbclient-trackor.streamlit.app/` using Streamlit Cloud.
+### Local Deployment
+
+```bash
+streamlit run dumb_client/app.py
+```
+
+## MCP Server
+### Remote Deployment (Easiest)
 It is already deployed using FastMCP Cloud, you just need to drag this DXT File  `https://at0mxploit.fastmcp.app/manifest.dxt` to Claude Extension. This automatically configures the server for Claude and includes all tools and resources. (Currently available only in Pro). It's setup for all different models and tools but I use Claude so.
 
 <img width="829" height="366" alt="test" src="https://github.com/user-attachments/assets/bced55ea-eecb-4d9a-bd54-a7c44e498617" />
 
-## Local Development
+### Local Development
 
 Claude Connectors (remote MCP URLs) are only available for Pro users. However, **non-Pro Claude Desktop users can still use this MCP server** by running a **local proxy**.
 
@@ -73,4 +85,5 @@ This will generate `trackor-proxy.mcpb`.
 3. Claude will load the MCP server via the local STDIO proxy.
 
 ---
+
 
